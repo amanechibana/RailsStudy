@@ -1,5 +1,5 @@
 class SubscribersController < ApplicationController
-    allow_unauthenticated_access 
+    allow_unauthenticated_access
     before_action :set_product
 
     def create
@@ -13,6 +13,6 @@ class SubscribersController < ApplicationController
     end
 
     def subscriber_params
-        params.expect(subscriber: [:email])
+        params.expect(subscriber: [ :email ])
     end
 end

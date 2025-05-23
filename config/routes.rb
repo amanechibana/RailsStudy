@@ -15,13 +15,12 @@ Rails.application.routes.draw do
   # root "posts#index"
   root "products#index"
   resources :products do
-    resources :subscribers, only: [:create]
+    resources :subscribers, only: [ :create ]
   end
-  resource :unsubscribe, only: [:show]
-  #get "/products", to: "products#index"
-  #get "/products/new", to: "products#show"
-  #post "/products", to: "products#create"
-  
-  # resources :products, defines 8 basic routes for products
+  resource :unsubscribe, only: [ :show ]
+  # get "/products", to: "products#index"
+  # get "/products/new", to: "products#show"
+  # post "/products", to: "products#create"
 
+  # resources :products, defines 8 basic routes for products
 end
