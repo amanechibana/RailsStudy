@@ -15,6 +15,9 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+
+    @product.user = Current.user
+
     if @product.save
       redirect_to @product
     else
@@ -44,6 +47,6 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      params.expect(product: [ :name, :description, :featured_image, :inventory_count ])
+      params.require(:product).permit(:name, :description, :featured_image, :inventory_count)
     end
 end
