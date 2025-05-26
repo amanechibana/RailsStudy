@@ -24,11 +24,11 @@
 
   <body>
     <div class="notice"> <%= notice %></div>
-    <nav>
-      <%= link_to "Home", root_path %>
-      <%= link_to "Login", new_session_path unless authenticated? %>
-      <%= link_to "Register", new_user_path unless authenticated? %>
-      <%= button_to "Log out", session_path, method: :delete if authenticated? %>
+    <nav class="navbar">
+      <%= link_to "Home", root_path, class: "nav-link" %>
+      <%= link_to "Login", new_session_path, class: "nav-link" unless authenticated? %>
+      <%= link_to "Register", new_user_path, class: "nav-link" unless authenticated? %>
+      <%= button_to "Log out", session_path, method: :delete, class: "btn btn-link nav-link" if authenticated? %>
     </nav>
 
     <main>

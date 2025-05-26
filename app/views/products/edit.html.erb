@@ -1,7 +1,7 @@
 <h1>Edit Product</h1>
 
-<div id="products">
-    <%= link_to "Product List", products_path %>
+<div id="products" class="products-container">
+    <%= link_to "Product List", products_path, class: "btn btn-link" %>
     
     <%= render "form", product: @product %>
 </div>
